@@ -43,9 +43,9 @@ export async function resultado(moedaDigital: string, moedaFisica: string): Prom
   };
 }
 
-export const mapArrays = (array: string[], tagHtml: string): string => {
+export const mapArrays = (array: string[], tagHtml?: string): string => {
   const mapDoArray = array.map(item => {
-    return (tagHtml === 'option') ? `<${tagHtml} value=${item}>${item}</${tagHtml}>` : `<${tagHtml}>${item}</${tagHtml}>`
+    return (tagHtml === 'option') ? `<option value=${item}>${item}</option>` : `<p>${item}</p>`
   });
   return mapDoArray.join(',').replace(/,/g, '');
 }
